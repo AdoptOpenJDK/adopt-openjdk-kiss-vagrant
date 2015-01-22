@@ -13,9 +13,9 @@ The sections in this document are below, all the bullet points are steps require
 
 ## Install Virtual Box, Vagrant & Git
 Install the software, initially created and tested on a Mac and the versions used as of 2015/01/18 are;
-  - Virtual Box v4.3.20
-  - Vagrant v1.7.1
-  - Git v2.2.2
+  - Virtual Box v4.3.20 (https://www.virtualbox.org/wiki/Downloads)
+  - Vagrant v1.7.1 (https://www.vagrantup.com/downloads.html)
+  - Git v2.2.2 (http://git-scm.com/downloads)
 
 ## Clone Adopt-OpenJDK-Kiss-Vagrant
 Clone the git repository containing the vagrant files and scripts required.
