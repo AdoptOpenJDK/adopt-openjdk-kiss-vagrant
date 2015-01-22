@@ -25,8 +25,11 @@ Clone the git repository containing the vagrant files and scripts required.
 The vagrant setup is configured to use the official Ubuntu 14.10 64bit vagrant box provided by Ubuntu. So not a specially customised preconfigured vm. The main reason to this as the base, it that it's up to date, has an proven and tested openjdk-8 installation so no need to built it yourself.
 
 **Before starting feel free to edit the Vagrantfile if your machine has more than 1 cpu and 512MB avaliable. When developing I used 2 cpus and 2048 memory. On 1st boot it will automatically download the vm image which is roughly 350MB. **
-  - vagrant up
-  - vagrant ssh
+
+```
+  $ vagrant up
+  $ vagrant ssh
+```
 
 ##### Troubleshooting
 If the virtual machine boots but you see apt errors. Try logging in aka <code>vagrant ssh</code> and then execute <code>$ sudo /vagrant/scripts/aptget-deps.sh</code>. This is the main reason it's a seperate script so can be manually re-executed if required.
@@ -36,12 +39,17 @@ Windows users will need to skip <code>vagrant ssh</code> and once the vm has boo
 ## Initial Vagrant VM setup
 Once the vm has booted and dependencies have been installed the next script will download the latest version of jdk9, if already cloned it will update so multiple execute is handled.
 
-  - vagrant ssh
-  - $ /vagrant/scripts/source.sh
+```
+  $ vagrant ssh
+  $ /vagrant/scripts/source.sh
+```
 
 ## OpenJDK 9 Build
-  - vagrant ssh
-  - $ cd ~/source/jdk9 ;
-  - $ bash configure ;
-  - $ make clean images ;
-  - $ make test ;
+```
+  $ vagrant ssh
+  $ cd ~/source/jdk9 ;
+  $ bash get_source.sh ;
+  $ bash configure ;
+  $ make clean images ;
+  $ make test ;
+```
