@@ -19,3 +19,5 @@ hg update ;
 chmod u+x get_source.sh ;
 
 ./get_source.sh ;
+
+cp update*.sh ${SOURCE_CODE}/${JDK_FOLDER}	
