@@ -64,16 +64,16 @@ Once the vm has booted and dependencies have been installed the next script will
 ## Scripts and their lifecycle
 
 #### Vagrant supporting scripts
-<b>Note:</b> before these block of scripts can be used, the above steps need to be executed and be successful.
+<b>Note:</b> before these block of scripts can be used, the above steps need to be executed and be successful. They are enlisted in the order they should be used.
 ```
    createBoxFromVagrantImage.sh - once a vagrant box is available this command can be used to create a package for portability of the box (by default uses a fixed name for the box)
-   loadboxFromBoxInFolder.sh - when a portable box is available we can load it and add it to the vagrant repo with this script (by default expects to find the fixed-name box in the same folder)
-   sshIntoBoxInThisFolder.sh - (ssh into the fixed name box loaded previously)
-   shutdownBoxInThisFolder.sh - (shutdown the fixed name box loaded previously)
+   loadboxFromBoxInFolder.sh - when a portable box is available we can load it and add it to the vagrant repo with this script (by default expects to find the fixed-name box in the same folder), depends on the success of createBoxFromVagrantImage.sh
+   sshIntoBoxInThisFolder.sh - ssh into the fixed name box loaded previously, depends on the success of createBoxFromVagrantImage.sh
+   shutdownBoxInThisFolder.sh - shutdown the fixed name box loaded previously, depends on the success of createBoxFromVagrantImage.sh
 ```
 
 #### OpenJDK build supporting scripts
-<b>Note:</b> these block of scripts help in the build process of OpenJDK.
+<b>Note:</b> these block of scripts help in building OpenJDK.
 ```
    scripts/aptget-deps.sh - installs all the necessary dependencies to build OpenJDK9
    scripts/source-common.sh - called by scripts/source-only-in-guest.sh and scripts/source-share-with-host.sh
