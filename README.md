@@ -42,7 +42,7 @@ Once the vm has booted and dependencies have been installed the next script will
 
 ```
   $ vagrant ssh
-  $ /vagrant/scripts/source.sh
+  $ /vagrant/scripts/source-share-with-host.sh
 ```
 
 ## OpenJDK 9 Build
