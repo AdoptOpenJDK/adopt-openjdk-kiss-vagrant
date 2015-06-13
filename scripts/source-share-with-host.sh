@@ -1,9 +1,10 @@
 #!/bin/bash
 
 VAGRANT_HOST_GUEST_SHARED_FOLDER=/vagrant
-SOURCE_CODE=${VAGRANT_HOST_GUEST_SHARED_FOLDER}/sources ;
+export SOURCE_CODE=${VAGRANT_HOST_GUEST_SHARED_FOLDER}/sources ;
 JDK_FOLDER=jdk9
 OPENJDK_REPO=http://hg.openjdk.java.net/jdk9/dev
+SCRIPTS_FOLDER=../../scripts/
 
 mkdir -p ${SOURCE_CODE} ;
 cd ${SOURCE_CODE} ;
@@ -21,4 +22,4 @@ chmod u+x get_source.sh ;
 
 ./get_source.sh ;
 
-cp update*.sh ${SOURCE_CODE}/${JDK_FOLDER}
+cp -f ${SCRIPTS_FOLDER}/update*.sh ${SOURCE_CODE}/${JDK_FOLDER}

@@ -1,8 +1,9 @@
 #!/bin/bash
 
-SOURCE_CODE=${HOME}/sources ;
+export SOURCE_CODE=${HOME}/sources ;
 JDK_FOLDER=jdk9
 OPENJDK_REPO=http://hg.openjdk.java.net/jdk9/dev
+SCRIPTS_FOLDER=../../scripts/
 
 mkdir -p ${SOURCE_CODE} ;
 cd ${SOURCE_CODE} ;
@@ -20,4 +21,4 @@ chmod u+x get_source.sh ;
 
 ./get_source.sh ;
 
-cp update*.sh ${SOURCE_CODE}/${JDK_FOLDER}	
+cp -f ${SCRIPTS_FOLDER}/update*.sh ${SOURCE_CODE}/${JDK_FOLDER}
