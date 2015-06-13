@@ -22,4 +22,6 @@ DEBIAN_FRONTEND=noninteractive apt-get --yes --fix-missing install git-core ;
 DEBIAN_FRONTEND=noninteractive apt-get --yes --fix-missing install mercurial ;
 DEBIAN_FRONTEND=noninteractive apt-get --yes --fix-missing install tree ;
 
+DEBIAN_FRONTEND=noninteractive add-apt-repository ppa:openjdk-r/ppa -y
+DEBIAN_FRONTEND=noninteractive apt-get update -y
 DEBIAN_FRONTEND=noninteractive apt-get --yes --fix-missing install openjdk-8-jdk ;
