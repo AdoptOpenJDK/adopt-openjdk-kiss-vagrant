@@ -3,12 +3,14 @@
 VAGRANT_HOST_GUEST_SHARED_FOLDER=/vagrant
 SOURCE_CODE=${VAGRANT_HOST_GUEST_SHARED_FOLDER}/sources ;
 JDK_FOLDER=jdk9
+OPENJDK_REPO=http://hg.openjdk.java.net/jdk9/dev
+
 mkdir -p ${SOURCE_CODE} ;
 cd ${SOURCE_CODE} ;
 
 # if jdk9 already exists don't clone
 if [ ! -d ${SOURCE_CODE}/${JDK_FOLDER} ] ; then
-	hg clone http://hg.openjdk.java.net/jdk9/dev ${JDK_FOLDER} ;
+	hg clone ${OPENJDK_REPO} ${JDK_FOLDER} ;
 fi
 
 # update and double check clone worked
