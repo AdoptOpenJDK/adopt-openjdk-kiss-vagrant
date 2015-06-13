@@ -24,7 +24,7 @@ echo "The vagrant box ubuntu-14.04-openjdk9 has been added"
 vagrant box list | grep "ubuntu-14.04-openjdk9"
 
 echo "Running ubuntu-14.04-openjdk9"
-vagrant up
+VAGRANT_VAGRANTFILE=Vagrantfile-from-box vagrant up 
 
 echo "ssh into the box: ubuntu-14.04-openjdk9"
-vagrant ssh
+VAGRANT_VAGRANTFILE=Vagrantfile-from-box vagrant ssh
