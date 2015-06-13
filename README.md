@@ -61,3 +61,29 @@ Once the vm has booted and dependencies have been installed the next script will
   $ bash get_source.sh
   $ make clean images LOG=debug
 ```
+## Scripts and their lifecycle
+
+#### Vagrant supporting scripts
+<b>Note:</b> before these block of scripts can be used, the above steps need to be executed and be successful.
+```
+   createBoxFromVagrantImage.sh - once a vagrant box is available this command can be used to create a package for portability of the box (by default uses a fixed name for the box)
+   loadboxFromBoxInFolder.sh - when a portable box is available we can load it and add it to the vagrant repo with this script (by default expects to find the fixed-name box in the same folder)
+   sshIntoBoxInThisFolder.sh - (ssh into the fixed name box loaded previously)
+   shutdownBoxInThisFolder.sh - (shutdown the fixed name box loaded previously)
+```
+
+#### OpenJDK build supporting scripts
+<b>Note:</b> these block of scripts help in the build process of OpenJDK.
+```
+   scripts/aptget-deps.sh - installs all the necessary dependencies to build OpenJDK9
+   scripts/source-common.sh - called by scripts/source-only-in-guest.sh and scripts/source-share-with-host.sh
+   scripts/source-only-in-guest.sh - selects the '/home' folder on the vagrant vm to install OpenKJDK9 sources
+   scripts/source-share-with-host.sh - selects the '/vagrant/' folder on the vagrant vm to install OpenKJDK9 sources, /vagrant/ is shared from both guest and host OS for read/write/view purposes
+   
+   scripts/test.sh - partially complete script to setup the environment to run JTReg tests
+   
+   scripts/updateAndBuildOpenJDK.sh - updates sources and builds openjdk (make images)
+   scripts/updateAndCleanBuildOpenJDK.sh - updates sources and clean builds openjdk (make clean images)
+   scripts/updateBuildAndTestOpenJDK.sh - updates sources, builds openjdk (make images) and runs all the tests
+   scripts/updateCleanBuildAndTestOpenJDK.sh  - updates sources, clean builds openjdk (make clean images) and runs all the tests
+```
