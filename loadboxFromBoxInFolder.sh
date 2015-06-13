@@ -6,7 +6,7 @@ set -eu
 echo "==>Loading box ubuntu-14.04-openjdk9.box bundled with Vagrantfile from this folder<=="
 
 echo "Halting current vagrant instance"
-vagrant halt
+VAGRANT_VAGRANTFILE=Vagrantfile-from-box vagrant halt
 
 alreadyExists=$(echo `vagrant box list | grep "ubuntu-14.04-openjdk9"`)
 echo $alreadyExists
@@ -18,7 +18,10 @@ echo "Add the Box into Your Vagrant Install"
 vagrant box add --force ubuntu-14.04-openjdk9 ubuntu-14.04-openjdk9.box
 
 echo "Initializing the vagrant box: ubuntu-14.04-openjdk9"
+mv Vagrantfile Vagrantfile.backup
+rm -f Vagrantfile-from-box
 vagrant init ubuntu-14.04-openjdk9 --output Vagrantfile-from-box
+mv Vagrantfile.backup Vagrantfile
 
 echo "The vagrant box ubuntu-14.04-openjdk9 has been added"
 vagrant box list | grep "ubuntu-14.04-openjdk9"
