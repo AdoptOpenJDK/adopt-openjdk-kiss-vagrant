@@ -1,0 +1,1 @@
+# adopt-openjdk-kiss-vagrant
