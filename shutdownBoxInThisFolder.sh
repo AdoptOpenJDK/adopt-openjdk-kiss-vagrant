@@ -2,5 +2,7 @@
 
 set -eu
 
-echo "Shutting down ubuntu-12.04-openjdk9"
+export VAGRANT_BOX_NAME=ubuntu-12.04-openjdk9
+
+echo "Shutting down $VAGRANT_BOX_NAME"
 VAGRANT_VAGRANTFILE=Vagrantfile-from-box vagrant halt
