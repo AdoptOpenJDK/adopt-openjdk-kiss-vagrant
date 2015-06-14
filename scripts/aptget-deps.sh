@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eu
+
 DEBIAN_FRONTEND=noninteractive add-apt-repository ppa:openjdk-r/ppa -y ;
 
 DEBIAN_FRONTEND=noninteractive apt-get --yes --fix-missing update ;
