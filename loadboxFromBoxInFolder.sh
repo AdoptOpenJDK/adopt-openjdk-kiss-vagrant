@@ -6,9 +6,9 @@ export VAGRANT_BOX_NAME=ubuntu-12.04-openjdk9
 export VAGRANT_BOX_FILENAME=ubuntu-12.04-openjdk9.box
 
 # this will create a box from the vagrant/vm images that the vagrant file refers to
-echo "==>Loading box $VAGRANT_BOX_FILENAME bundled with Vagrantfile from this folder<=="
+echo "==> Loading box $VAGRANT_BOX_FILENAME bundled with Vagrantfile from this folder <=="
 
-echo "Halting current vagrant instance"
+echo "Halting any vagrant instance running $VAGRANT_BOX_NAME"
 VAGRANT_VAGRANTFILE=Vagrantfile-from-box vagrant halt
 
 alreadyExists=$(echo `vagrant box list | grep "$VAGRANT_BOX_NAME"`)
