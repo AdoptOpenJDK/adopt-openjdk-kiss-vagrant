@@ -24,3 +24,4 @@ chmod u+x get_source.sh ;
 ./get_source.sh ;
 
 cp -f ${SCRIPTS_FOLDER}/update*.sh ${SOURCE_CODE}/${JDK_FOLDER}
+cp -f ${SCRIPTS_FOLDER}/configure*.sh ${SOURCE_CODE}/${JDK_FOLDER}
