@@ -67,9 +67,10 @@ Once the vm has booted and dependencies have been installed the next script will
 <b>Note:</b> before these block of scripts can be used, the above steps need to be executed and be successful. They are enlisted in the order they should be used.
 ```
    createBoxFromVagrantImage.sh - once a vagrant box is available this command can be used to create a package for portability of the box (by default uses a fixed name for the box)
-   loadboxFromBoxInFolder.sh - when a portable box is available we can load it and add it to the vagrant repo with this script (by default expects to find the fixed-name box in the same folder), depends on the success of createBoxFromVagrantImage.sh
-   sshIntoBoxInThisFolder.sh - ssh into the fixed name box loaded previously, depends on the success of createBoxFromVagrantImage.sh
-   shutdownBoxInThisFolder.sh - shutdown the fixed name box loaded previously, depends on the success of createBoxFromVagrantImage.sh
+   destoryCreatedBox.sh         - detroys and removed the fixed-name box from the vagrant repo
+   loadboxFromBoxInFolder.sh    - when a portable box is available we can load it and add it to the vagrant repo with this script (by default expects to find the fixed-name box in the same folder), depends on the success of createBoxFromVagrantImage.sh
+   sshIntoBoxInThisFolder.sh    - ssh into the fixed name box loaded previously, depends on the success of createBoxFromVagrantImage.sh
+   shutdownBoxInThisFolder.sh   - shutdown the fixed name box loaded previously, depends on the success of createBoxFromVagrantImage.sh
 ```
 
 #### OpenJDK build supporting scripts
