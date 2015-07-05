@@ -20,7 +20,7 @@ Install the software, initially created and tested on a Mac and the versions use
 
 ## Clone Adopt-OpenJDK-Kiss-Vagrant
 Clone the git repository containing the vagrant files and scripts required.
-  - git clone https://github.com/nhojpatrick/adopt-openjdk-kiss-vagrant.git
+  - git clone https://github.com/neomatrix369/adopt-openjdk-kiss-vagrant.git
 
 ## Boot Vagrant VM
 The vagrant setup is configured to use the official Ubuntu 14.10 64bit vagrant box provided by Ubuntu. So not a specially customised preconfigured vm. The main reason to this as the base, it that it's up to date, has an proven and tested openjdk-8 installation so no need to built it yourself.
