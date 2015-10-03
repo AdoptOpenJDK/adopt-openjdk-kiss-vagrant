@@ -2,8 +2,8 @@
 
 set -eu
 
-export VAGRANT_BOX_NAME=ubuntu-12.04-openjdk9
-export VAGRANT_BOX_FILENAME=ubuntu-12.04-openjdk9.box
+export VAGRANT_BOX_NAME=ubuntu-12.04-$VAGRANT_BOX_NAME_SUFFIX
+export VAGRANT_BOX_FILENAME=ubuntu-12.04-$VAGRANT_BOX_NAME_SUFFIX.box
 
 # this will create a box from the vagrant/vm images that the vagrant file refers to
 echo "==> Loading box $VAGRANT_BOX_FILENAME bundled with Vagrantfile from this folder <=="

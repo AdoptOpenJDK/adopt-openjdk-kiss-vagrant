@@ -34,3 +34,5 @@ DEBIAN_FRONTEND=noninteractive apt-get --yes --fix-missing update ;
 DEBIAN_FRONTEND=noninteractive apt-get --yes --fix-missing install gcc-4.7-multilib ;
 DEBIAN_FRONTEND=noninteractive apt-get --yes --fix-missing install g++-4.7-multilib ;
 
+DEBIAN_FRONTEND=noninteractive apt-get --yes --fix-missing update ;
+DEBIAN_FRONTEND=noninteractive apt-get --yes --fix-missing upgrade ;

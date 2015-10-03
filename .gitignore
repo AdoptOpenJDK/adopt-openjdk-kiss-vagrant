@@ -1,3 +1,5 @@
 .vagrant
 .idea
 sources
+*.tar.gz
+*.box

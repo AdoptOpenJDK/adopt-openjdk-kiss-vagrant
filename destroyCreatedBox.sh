@@ -2,7 +2,7 @@
 
 set -eu
 
-export VAGRANT_BOX_NAME=ubuntu-12.04-openjdk9
+export VAGRANT_BOX_NAME=ubuntu-12.04-$VAGRANT_BOX_NAME_SUFFIX
 
 # this will destory the box
 echo "Destroying $VAGRANT_BOX_NAME from your Vagrant installation"
