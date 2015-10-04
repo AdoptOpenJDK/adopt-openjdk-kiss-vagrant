@@ -1,3 +1,6 @@
+export VAGRANT_BOX_CPUS=2
+export VAGRANT_BOX_MEMORY=4096
+
 export JDK_FOLDER=jdk9
 export OPENJDK_REPO=http://hg.openjdk.java.net/jdk9/dev
 export VAGRANT_BOX_NAME_SUFFIX=openjdk9

@@ -1,3 +1,6 @@
+export VAGRANT_BOX_CPUS=2
+export VAGRANT_BOX_MEMORY=4096
+
 export JDK_FOLDER=valhalla
 export OPENJDK_REPO=http://hg.openjdk.java.net/valhalla/valhalla
 export VAGRANT_BOX_NAME_SUFFIX=valhalla-openjdk9
