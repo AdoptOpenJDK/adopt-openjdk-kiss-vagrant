@@ -64,15 +64,17 @@ Once the vm has booted and dependencies have been installed the next script will
 
 ## Boot & setup Vagrant VM (auto mode)
 
-A couple of scripts have been provided to help automate the above processes.
+A couple of scripts have been provided to help automate the above processes. Clone the repo and run one of the below scripts depending on your use case. Initial runs can take about 30+ minutes dependent on the performance of your system.
+
+Have a look at the bash scripts before running them to get a better idea of what they are doing and if needs any customisations.
 
 ### Build OpenJDK9
 
-$ buildOpenJDK9UsingVagrant.sh
+```$ buildOpenJDK9UsingVagrant.sh```
 
 ### Build Valhalla (OpenJDK9)
 
-$ sh buildOpenJDK9UsingVagrant.sh
+```$ sh buildOpenJDK9UsingVagrant.sh```
 
 
 ## Create new scripts (recipes) for other OpenJDK projects
