@@ -45,7 +45,7 @@ Once the vm has booted and dependencies have been installed the next script will
   $ sh /vagrant/scripts/source-share-with-host.sh
 ```
 
-## OpenJDK 9 Build
+### OpenJDK 9 Build
 ```
   $ vagrant ssh
   $ cd /vagrant/sources/jdk9
@@ -54,7 +54,7 @@ Once the vm has booted and dependencies have been installed the next script will
   $ make test ;
 ```
 
-## OpenJDK 9 Build debug mode
+### OpenJDK 9 Build debug mode
 ```
   $ vagrant ssh
   $ cd /vagrant/sources/jdk9
