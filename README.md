@@ -81,9 +81,9 @@ Have a look at the bash scripts before running them to get a better idea of what
 
 A new recipe can be created by putting together three different files, and most of the existing scripts can be reused to create a new one. For e.g. the Valhalla build recipe is split into three bash files:
 
-   ```buildValhallaOpenJDK9UsingVagrant.sh```    <== exports Vagrant config params and triggers the vagrant process
-   ```scripts/setupEnvForValhallaOpenJDK9.sh```  <== exports global environment variables used by the scripts
-   ```scripts/buildValhallaOpenJDK9.sh```        <== triggers the OpenJDK build process run from inside the vagrant container (instance)
+   ```buildValhallaOpenJDK9UsingVagrant.sh```    <== exports Vagrant config params and triggers the vagrant process <br/>
+   ```scripts/setupEnvForValhallaOpenJDK9.sh```  <== exports global environment variables used by the scripts <br/>
+   ```scripts/buildValhallaOpenJDK9.sh```        <== triggers the OpenJDK build process run from inside the vagrant container (instance) <br/>
 
 Note: these scripts can be further optimised but to maintain readability and make it easier to create new scripts its best to use them as it is. Although pull requests with optimised scripts are welcome.
 
