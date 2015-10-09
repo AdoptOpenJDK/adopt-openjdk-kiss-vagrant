@@ -70,11 +70,11 @@ Have a look at the bash scripts before running them to get a better idea of what
 
 ### Build OpenJDK9
 
-```$ buildOpenJDK9UsingVagrant.sh```
+```$ sh buildOpenJDK9UsingVagrant.sh```
 
 ### Build Valhalla (OpenJDK9)
 
-```$ sh buildOpenJDK9UsingVagrant.sh```
+```$ sh buildValhallaOpenJDK9UsingVagrant.sh```
 
 
 ## Create new scripts (recipes) for other OpenJDK projects
