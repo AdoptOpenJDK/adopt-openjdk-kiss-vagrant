@@ -98,8 +98,14 @@ Note: these scripts can be further optimised but to maintain readability and mak
    scripts/source-share-with-host.sh - selects the '/vagrant/' folder on the vagrant vm to install OpenKJDK9 sources, /vagrant/ is shared from both guest and host OS for read/write/view purposes
    
    scripts/test.sh - partially complete script to setup the environment to run JTReg tests
-   
+
    scripts/configureAndBuildOpenJDKOnly.sh   - only configure the environment and builds openjdk (make images)
+
+   scripts/setupEnvForOpenJDK9.sh            - setup environment variables for OpenJDK inside the VM instance
+   scripts/setupEnvForValhallaOpenJDK9.sh    - setup environment variables for Valhalla OpenJDK inside the VM instance
+   scripts/buildOpenJDK9.sh                  - build OpenJDK inside the VM instance
+   scripts/buildValhallaOpenJDK9.sh          - build Valhalla inside the VM instance
+   
    scripts/updateAndBuildOpenJDK.sh          - updates sources and builds openjdk (make images)
    scripts/updateAndCleanBuildOpenJDK.sh     - updates sources and clean builds openjdk (make clean images)
    scripts/updateBuildAndTestOpenJDK.sh      - updates sources, builds openjdk (make images) and runs all the tests
