@@ -27,4 +27,5 @@ echo "Updating sources for ${JDK_FOLDER} via the get_source.sh script"
 
 echo "Copying scripts into the ${SOURCE_CODE}/${JDK_FOLDER} folder"
 cp -f ${SCRIPTS_FOLDER}/update*.sh ${SOURCE_CODE}/${JDK_FOLDER}
-cp -f ${SCRIPTS_FOLDER}/configure*.sh ${SOURCE_CODE}/${JDK_FOLDER}
+cp -f ${SCRIPTS_FOLDER}/setup*.sh ${SOURCE_CODE}/${JDK_FOLDER}
+cp -f ${SCRIPTS_FOLDER}/build*.sh ${SOURCE_CODE}/${JDK_FOLDER}
