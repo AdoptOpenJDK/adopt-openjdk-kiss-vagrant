@@ -11,10 +11,10 @@ The sections in this document are below, all the bullet points are steps require
   - Step 3a: Boot Vagrant VM (manual mode)
   - Step 3b: Initial Vagrant VM setup (manual mode)
     - OpenJDK 9 Build
-    - Valhalla OpenJDK 9 Build
+    - Project Valhalla OpenJDK 9 Build
   - Step 3c: Boot & setup Vagrant VM (auto mode)
     - OpenJDK 9 Build
-    - Valhalla OpenJDK 9 Build
+    - Project Valhalla OpenJDK 9 Build
   - Step 4: Create new scripts (recipes) for other OpenJDK projects
 
 Note: you can skip steps 3a and 3b for Step 3c.
@@ -69,7 +69,7 @@ Once the vm has booted and dependencies have been installed the next script will
   $ make clean images LOG=debug
 ```
 
-### Valhalla OpenJDK 9 Build debug mode
+### Project Valhalla OpenJDK 9 Build debug mode
 ```
   $ vagrant ssh
   $ cd /vagrant/sources/valhalla
@@ -87,18 +87,18 @@ Have a look at the bash scripts before running them to get a better idea of what
 
 ```$ sh buildOpenJDK9UsingVagrant.sh```
 
-### Build Valhalla (OpenJDK9)
+### Build Project Valhalla (OpenJDK9)
 
 ```$ sh buildValhallaOpenJDK9UsingVagrant.sh```
 
 
 ## Step 4 (optinal): Create new scripts (recipes) for other OpenJDK projects
 
-A new recipe can be created by putting together three different files, and most of the existing scripts can be reused to create a new one. For e.g. the Valhalla build recipe is split into three bash files:
+A new recipe can be created by putting together three different files, and most of the existing scripts can be reused to create a new one. For e.g. the Project Valhalla build recipe is split into three bash files:
 
-   ```buildValhallaOpenJDK9UsingVagrant.sh```    <== exports Vagrant config params and triggers the vagrant process <br/>
-   ```scripts/setupEnvForValhallaOpenJDK9.sh```  <== exports global environment variables used by the scripts <br/>
-   ```scripts/buildValhallaOpenJDK9.sh```        <== triggers the OpenJDK build process run from inside the vagrant container (instance) <br/>
+   ```buildValhallaOpenJDK9UsingVagrant.sh```    <== exports Vagrant config params and triggers the vagrant process (for Project Valhalla in this case)<br/>
+   ```scripts/setupEnvForValhallaOpenJDK9.sh```  <== exports global environment variables used by the scripts (for Project Valhalla in this case)<br/>
+   ```scripts/buildOpenJDK.sh```        <== triggers the OpenJDK build process run from inside the vagrant container (instance) <br/>
 
 Note: these scripts can be further optimised but to maintain readability and make it easier to create new scripts its best to use them as it is. Although pull requests with optimised scripts are welcome.
 
@@ -114,12 +114,9 @@ Note: these scripts can be further optimised but to maintain readability and mak
    
    scripts/test.sh - partially complete script to setup the environment to run JTReg tests
 
-   scripts/configureAndBuildOpenJDKOnly.sh   - only configure the environment and builds openjdk (make images)
-
    scripts/setupEnvForOpenJDK9.sh            - setup environment variables for OpenJDK inside the VM instance
-   scripts/setupEnvForValhallaOpenJDK9.sh    - setup environment variables for Valhalla OpenJDK inside the VM instance
-   scripts/buildOpenJDK9.sh                  - build OpenJDK inside the VM instance
-   scripts/buildValhallaOpenJDK9.sh          - build Valhalla inside the VM instance
+   scripts/setupEnvForValhallaOpenJDK9.sh    - setup environment variables for Project Valhalla OpenJDK inside the VM instance
+   scripts/buildOpenJDK.sh                   - build OpenJDK inside the VM instance
    
    scripts/updateAndBuildOpenJDK.sh          - updates sources and builds openjdk (make images)
    scripts/updateAndCleanBuildOpenJDK.sh     - updates sources and clean builds openjdk (make clean images)

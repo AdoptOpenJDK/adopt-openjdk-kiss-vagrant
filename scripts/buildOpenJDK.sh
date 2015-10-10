@@ -1,18 +1,48 @@
-echo "Creating folder sources if it does not exists"
+echo "***************************************************************************************"
+echo "*                                                                                     *"
+echo "* Creating folder sources if it does not exists                                       *"
+echo "*                                                                                     *"
+echo "***************************************************************************************"
 mkdir -p /vagrant/sources
 
-echo "Changing into folder sources"
+echo "***************************************************************************************"
+echo "*                                                                                     *"
+echo "* Changing into folder '/vagrant/sources' inside the VM                               *"
+echo "*                                                                                     *"
+echo "***************************************************************************************"
 cd /vagrant/sources
 
-echo "Setting up environment variables for $BUILD_NAME"
+echo "***************************************************************************************"
+echo "*                                                                                     *"
+echo "* Setting up environment variables for $BUILD_NAME using $1                           *"
+echo "*                                                                                     *"
+echo "***************************************************************************************"
 . ../scripts/$1
 
-echo "Run script to update sources and share with host"
+echo "***************************************************************************************"
+echo "*                                                                                     *"
+echo "* Run script to update sources and share with host                                    *"
+echo "*                                                                                     *"
+echo "***************************************************************************************"
 sh ../scripts/source-share-with-host.sh
 
-echo "Changing into folder $JDK_FOLDER"
+echo "***************************************************************************************"
+echo "*                                                                                     *"
+echo "* Changing into folder $JDK_FOLDER                                                    *"
+echo "*                                                                                     *"
+echo "***************************************************************************************"
 cd $JDK_FOLDER
 
-echo "Run script to configure and build $BUILD_NAME"
+echo "*********************************************************************************************"
+echo "*                                                                                           *"
+echo "* Start configure build system for $BUILD_NAME with 'bash configure $BASH_CONFIGURE_PARAMS' *"
+echo "*                                                                                           *"
+echo "*********************************************************************************************"
 bash configure $BASH_CONFIGURE_PARAMS
+
+echo "***************************************************************************************"
+echo "*                                                                                     *"
+echo "* Start building $BUILD_NAME with 'make $MAKE_PARAMS'                                 *"
+echo "*                                                                                     *"
+echo "***************************************************************************************"
 make $MAKE_PARAMS

@@ -1,8 +1,25 @@
 export VAGRANT_BOX_CPUS=2
 export VAGRANT_BOX_MEMORY=4096
-
 export VAGRANT_BOX_NAME_SUFFIX=valhalla-openjdk9
+export SETUP_SCRIPT_NAME=setupEnvForValhallaOpenJDK9.sh
 
+echo "***************************************************************************************"
+echo "*                                                                                     *"
+echo "* Vagrant start the VM (if not active)                                                *"
+echo "*                                                                                     *"
+echo "***************************************************************************************"
 vagrant up
-vagrant ssh -c "sh /vagrant/scripts/buildOpenJDK.sh setupEnvForValhallaOpenJDK9.sh"
+
+echo "***************************************************************************************"
+echo "*                                                                                     *"
+echo "* Vagrant ssh-ing into the box, to execute OpenJDK commands...                        *"
+echo "*                                                                                     *"
+echo "***************************************************************************************"
+vagrant ssh -c "sh /vagrant/scripts/buildOpenJDK.sh $SETUP_SCRIPT_NAME"
+
+echo "***************************************************************************************"
+echo "*                                                                                     *"
+echo "* Vagrant ssh into the box, into command prompt                                       *"
+echo "*                                                                                     *"
+echo "***************************************************************************************"
 vagrant ssh
