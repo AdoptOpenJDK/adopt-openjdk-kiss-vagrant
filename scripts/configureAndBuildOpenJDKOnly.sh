@@ -1,2 +1,0 @@
-bash configure $BASH_CONFIGURE_PARAMS
-make $MAKE_PARAMS

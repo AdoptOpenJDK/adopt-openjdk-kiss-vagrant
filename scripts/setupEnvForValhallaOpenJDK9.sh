@@ -1,3 +1,4 @@
+export BUILD_NAME=Project Valhalla
 export JDK_FOLDER=valhalla
 export OPENJDK_REPO=http://hg.openjdk.java.net/valhalla/valhalla
 ### This is the JDK8 path inside the vagrant box
