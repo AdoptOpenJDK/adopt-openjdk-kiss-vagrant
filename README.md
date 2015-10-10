@@ -72,7 +72,7 @@ Once the vm has booted and dependencies have been installed the next script will
 ### Valhalla OpenJDK 9 Build debug mode
 ```
   $ vagrant ssh
-  $ cd /vagrant/sources/jdk9
+  $ cd /vagrant/sources/valhalla
   $ bash get_source.sh
   $ make clean jimages LOG=debug
 ```
