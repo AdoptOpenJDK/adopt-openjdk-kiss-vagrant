@@ -17,8 +17,6 @@ The sections in this document are below, all the bullet points are steps require
     - OpenJDK 9 Build
     - Project Valhalla OpenJDK 9 Build
 
-Note: you can skip steps 3a and 3b for Step 3c.
-
 ## Step 1: Install Virtual Box, Vagrant & Git
 Install the software, initially created and tested on a Mac and the versions used as of 2015/01/18 are;
   - Virtual Box v4.3.20 (https://www.virtualbox.org/wiki/Downloads)
@@ -29,7 +27,7 @@ Install the software, initially created and tested on a Mac and the versions use
 Clone the git repository containing the vagrant files and scripts required.
   - git clone https://github.com/neomatrix369/adopt-openjdk-kiss-vagrant.git
 
-## Step 3a: Boot & setup Vagrant VM (auto mode)
+## Step 3: Boot & setup Vagrant VM (auto mode)
 
 A couple of scripts have been provided to help automate the above processes. Clone the repo and run one of the below scripts depending on your use case. Initial runs can take about 30+ minutes dependent on the performance of your system.
 
