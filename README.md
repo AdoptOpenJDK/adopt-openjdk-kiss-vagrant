@@ -8,14 +8,14 @@ The sections in this document are below, all the bullet points are steps require
 
   - Step 1: Install Virtual Box, Vagrant & Git
   - Step 2: Clone Adopt-OpenJDK-Kiss-Vagrant
-  - Step 3a: Boot Vagrant VM (manual mode)
-  - Step 3b: Initial Vagrant VM setup (manual mode)
-    - OpenJDK 9 Build
-    - Project Valhalla OpenJDK 9 Build
-  - Step 3c: Boot & setup Vagrant VM (auto mode)
+  - Step 3: Boot & setup Vagrant VM (auto mode)
     - OpenJDK 9 Build
     - Project Valhalla OpenJDK 9 Build
   - Step 4: Create new scripts (recipes) for other OpenJDK projects
+  - Step 5a: Boot Vagrant VM (manual mode)
+  - Step 5b: Initial Vagrant VM setup (manual mode)
+    - OpenJDK 9 Build
+    - Project Valhalla OpenJDK 9 Build
 
 Note: you can skip steps 3a and 3b for Step 3c.
 
@@ -29,7 +29,32 @@ Install the software, initially created and tested on a Mac and the versions use
 Clone the git repository containing the vagrant files and scripts required.
   - git clone https://github.com/neomatrix369/adopt-openjdk-kiss-vagrant.git
 
-## Step 3a (method 1): Boot Vagrant VM (manual mode)
+## Step 3a: Boot & setup Vagrant VM (auto mode)
+
+A couple of scripts have been provided to help automate the above processes. Clone the repo and run one of the below scripts depending on your use case. Initial runs can take about 30+ minutes dependent on the performance of your system.
+
+Have a look at the bash scripts before running them to get a better idea of what they are doing and if needs any customisations.
+
+### Build OpenJDK9
+
+```$ sh buildOpenJDK9UsingVagrant.sh```
+
+### Build Project Valhalla (OpenJDK9)
+
+```$ sh buildValhallaOpenJDK9UsingVagrant.sh```
+
+
+## Step 4 (optinal): Create new scripts (recipes) for other OpenJDK projects
+
+A new recipe can be created by putting together three different files, and most of the existing scripts can be reused to create a new one. For e.g. the Project Valhalla build recipe is split into three bash files:
+
+   ```buildValhallaOpenJDK9UsingVagrant.sh```    <== exports Vagrant config params and triggers the vagrant process (for Project Valhalla in this case)<br/>
+   ```scripts/setupEnvForValhallaOpenJDK9.sh```  <== exports global environment variables used by the scripts (for Project Valhalla in this case)<br/>
+   ```scripts/buildOpenJDK.sh```        <== triggers the OpenJDK build process run from inside the vagrant container (instance) <br/>
+
+Note: these scripts can be further optimised but to maintain readability and make it easier to create new scripts its best to use them as it is. Although pull requests with optimised scripts are welcome.
+
+## Step 5a (method 1): Boot Vagrant VM (manual mode)
 The vagrant setup is configured to use the official Ubuntu 14.10 64bit vagrant box provided by Ubuntu. So not a specially customised preconfigured vm. The main reason to this as the base, it that it's up to date, has an proven and tested openjdk-8 installation so no need to built it yourself.
 
 **Before starting feel free to edit the Vagrantfile if your machine has more than 1 cpu and 512MB avaliable. When developing I used 2 cpus and 2048 memory. On 1st boot it will automatically download the vm image which is roughly 350MB. **
@@ -44,7 +69,7 @@ If the virtual machine boots but you see apt errors. Try logging in aka <code>va
 
 Windows users will need to skip <code>vagrant ssh</code> and once the vm has booted scan the output to see what port it being used for ssh and use putty to login.
 
-## Step 3b: Initial Vagrant VM setup (manual mode)
+## Step 5b: Initial Vagrant VM setup (manual mode)
 Once the vm has booted and dependencies have been installed the next script will download the latest version of jdk9, if already cloned it will update so multiple execute is handled.
 
 ```
@@ -76,31 +101,6 @@ Once the vm has booted and dependencies have been installed the next script will
   $ bash get_source.sh
   $ make clean jimages LOG=debug
 ```
-
-## Step 3c: Boot & setup Vagrant VM (auto mode)
-
-A couple of scripts have been provided to help automate the above processes. Clone the repo and run one of the below scripts depending on your use case. Initial runs can take about 30+ minutes dependent on the performance of your system.
-
-Have a look at the bash scripts before running them to get a better idea of what they are doing and if needs any customisations.
-
-### Build OpenJDK9
-
-```$ sh buildOpenJDK9UsingVagrant.sh```
-
-### Build Project Valhalla (OpenJDK9)
-
-```$ sh buildValhallaOpenJDK9UsingVagrant.sh```
-
-
-## Step 4 (optinal): Create new scripts (recipes) for other OpenJDK projects
-
-A new recipe can be created by putting together three different files, and most of the existing scripts can be reused to create a new one. For e.g. the Project Valhalla build recipe is split into three bash files:
-
-   ```buildValhallaOpenJDK9UsingVagrant.sh```    <== exports Vagrant config params and triggers the vagrant process (for Project Valhalla in this case)<br/>
-   ```scripts/setupEnvForValhallaOpenJDK9.sh```  <== exports global environment variables used by the scripts (for Project Valhalla in this case)<br/>
-   ```scripts/buildOpenJDK.sh```        <== triggers the OpenJDK build process run from inside the vagrant container (instance) <br/>
-
-Note: these scripts can be further optimised but to maintain readability and make it easier to create new scripts its best to use them as it is. Although pull requests with optimised scripts are welcome.
 
 ## Scripts and their lifecycle
 
