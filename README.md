@@ -25,7 +25,7 @@ Install the software, initially created and tested on a Mac and the versions use
 
 ## Step 2: Clone Adopt-OpenJDK-Kiss-Vagrant
 Clone the git repository containing the vagrant files and scripts required.
-  - git clone https://github.com/neomatrix369/adopt-openjdk-kiss-vagrant.git
+  - git clone https://github.com/adoptopenjdk/adopt-openjdk-kiss-vagrant.git
 
 ## Step 3: Boot & setup Vagrant VM (auto mode)
 
